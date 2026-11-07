@@ -145,8 +145,12 @@ a:hover {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 10px;
   align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  position: relative;
 }
 
 .hamburger-btn span {
@@ -155,10 +159,24 @@ a:hover {
   background-color: var(--text-dark);
   border-radius: 2px;
   transition: all 0.3s;
+  position: absolute;
+}
+
+.hamburger-btn span:nth-child(1) {
+  top: 13px;
+}
+
+.hamburger-btn span:nth-child(2) {
+  top: 21px;
+}
+
+.hamburger-btn span:nth-child(3) {
+  top: 29px;
 }
 
 .hamburger-btn.active span:nth-child(1) {
-  transform: rotate(45deg) translate(10px, 10px);
+  transform: rotate(45deg);
+  top: 21px;
 }
 
 .hamburger-btn.active span:nth-child(2) {
@@ -166,7 +184,8 @@ a:hover {
 }
 
 .hamburger-btn.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: rotate(-45deg);
+  top: 21px;
 }
 
 /* --------------------------------------------------------------------------
@@ -674,6 +693,83 @@ a:hover {
   gap: 8px;
 }
 
+/* --------------------------------------------------------------------------
+   HOMEPAGE RESPONSIVE OVERRIDES
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Hero Section - single column */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  /* Hero stats - stack vertical */
+  .hero-stats {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 1.5rem !important;
+  }
+  
+  .hero-stats > div {
+    border: none !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .hero-stats > div:last-child {
+    border-bottom: none !important;
+  }
+  
+  /* Hero form - single column */
+  .hero-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Features grid - single column */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Process grid - already uses auto-fit, just adjust gap */
+  .process-grid {
+    gap: 1.5rem !important;
+  }
+  
+  /* Hero section padding */
+  .hero-section {
+    padding: 3rem 1rem !important;
+  }
+  
+  /* CTA buttons */
+  .cta-buttons {
+    flex-direction: column !important;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 2rem 0.75rem !important;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .feature-card, .process-card {
+    padding: 1.5rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   NAVBAR RESPONSIVE
+   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   /* Navbar */
   .main-navbar {
@@ -755,9 +851,11 @@ a:hover {
   }
   
   .sidebar {
-    position: static;
-    top: auto;
-    margin-bottom: 1rem;
+    display: none;
+  }
+  
+  .main-content-full {
+    width: 100%;
   }
   
   /* Forms */
