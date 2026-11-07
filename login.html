@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Pemesanan Ruang Diskusi Telkom University</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .login-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .login-content h1 {
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .login-content p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .login-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .login-feature {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .login-feature-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, #b91c1c 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .login-feature-text h4 {
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0 0 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .login-feature-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .auth-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+      padding: 3rem;
+      border-top: 5px solid var(--color-secondary);
+    }
+
+    .auth-card-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .auth-card-header img {
+      height: 52px;
+      width: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .auth-card-header h2 {
+      font-size: 1.6rem;
+      color: var(--text-dark);
+      margin: 0 0 0.5rem 0;
+      font-weight: 800;
+    }
+
+    .auth-card-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .role-switcher {
+      display: flex;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      gap: 6px;
+    }
+
+    .role-btn {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .role-btn:hover {
+      background: rgba(153, 0, 0, 0.08);
+    }
+
+    .role-btn.active {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, #b91c1c 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(153, 0, 0, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      background: white;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 0 3px rgba(153, 0, 0, 0.1);
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .remember-forgot label {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .remember-forgot a {
+      color: var(--color-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .remember-forgot a:hover {
+      color: #b91c1c;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, #b91c1c 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(153, 0, 0, 0.2);
+    }
+
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(153, 0, 0, 0.3);
+    }
+
+    .auth-footer {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .auth-footer a {
+      color: var(--color-secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .back-link a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .back-link a:hover {
+      color: var(--color-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .login-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .login-content {
+        display: none;
+      }
+
+      .auth-card {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-wrapper">
+    <!-- Left Content -->
+    <div class="login-content">
+      <h1>Masuk ke Portal <span style="color: var(--color-secondary);">Pemesanan Ruangan</span></h1>
+      <p>
+        Akses sistem booking ruang diskusi Telkom University Jakarta. Kelola pemesanan, verifikasi, dan laporan fasilitas dengan mudah.
+      </p>
+
+      <div class="login-features">
+        <div class="login-feature">
+          <div class="login-feature-icon">
+            <svg style="width:24px;height:24px;fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          </div>
+          <div class="login-feature-text">
+            <h4>Cek Real-Time</h4>
+            <p>Pengecekan ketersediaan ruangan langsung via AJAX tanpa delay.</p>
+          </div>
+        </div>
+
+        <div class="login-feature">
+          <div class="login-feature-icon">
+            <svg style="width:24px;height:24px;fill:currentColor;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <div class="login-feature-text">
+            <h4>Multi-Role System</h4>
+            <p>Mahasiswa, Pengelola, dan Admin dengan akses fitur berbeda.</p>
+          </div>
+        </div>
+
+        <div class="login-feature">
+          <div class="login-feature-icon">
+            <svg style="width:24px;height:24px;fill:currentColor;" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <div class="login-feature-text">
+            <h4>Transparansi Penuh</h4>
+            <p>Log aktivitas lengkap dan status pemesanan yang jelas setiap waktu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Card -->
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <img src="assets/img/logo-telkom.png" alt="Logo Telkom University">
+        <h2>Login Sistem</h2>
+        <p>Pilih peran dan masuk dengan akun Anda</p>
+      </div>
+
+      <label style="text-align: center; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1rem; font-weight: 600;">
+        Pilih Peran Login
+      </label>
+      <div class="role-switcher">
+        <button type="button" class="role-btn active" onclick="switchRole('mahasiswa', this)">Mahasiswa</button>
+        <button type="button" class="role-btn" onclick="switchRole('pengelola', this)">Pengelola</button>
+        <button type="button" class="role-btn" onclick="switchRole('admin', this)">Admin</button>
+      </div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label class="form-label" id="labelUsername">Email Mahasiswa</label>
+          <input type="email" class="form-control" id="inputUsername" placeholder="nama@student.telkomuniversity.ac.id" required value="faisa@student.telkomuniversity.ac.id">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Masukkan password Anda" required value="password123">
+        </div>
+
+        <div class="remember-forgot">
+          <label>
+            <input type="checkbox"> Ingat saya
+          </label>
+          <a href="#" onclick="alert('Silakan hubungi administrator kampus jika lupa password.'); return false;">Lupa password?</a>
+        </div>
+
+        <button type="submit" class="btn-login">
+          Masuk Sekarang
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        Belum memiliki akun? <a href="daftar.html">Daftar Akun Baru</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="index.html">← Kembali ke Beranda Utama</a>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    let currentRole = 'mahasiswa';
+
+    function switchRole(role, btn) {
+      currentRole = role;
+      document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const labelUsername = document.getElementById('labelUsername');
+      const inputUsername = document.getElementById('inputUsername');
+
+      if (role === 'mahasiswa') {
+        labelUsername.innerText = 'Email Mahasiswa';
+        inputUsername.value = 'faisa@student.telkomuniversity.ac.id';
+        inputUsername.placeholder = 'nama@student.telkomuniversity.ac.id';
+      } else if (role === 'pengelola') {
+        labelUsername.innerText = 'Email Pengelola';
+        inputUsername.value = 'pengelola@telkomuniversity.ac.id';
+        inputUsername.placeholder = 'pengelola@telkomuniversity.ac.id';
+      } else if (role === 'admin') {
+        labelUsername.innerText = 'Email Admin';
+        inputUsername.value = 'admin@telkomuniversity.ac.id';
+        inputUsername.placeholder = 'admin@telkomuniversity.ac.id';
+      }
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      showNotification(`Login berhasil sebagai ${currentRole.toUpperCase()}!`, 'success');
+
+      setTimeout(() => {
+        if (currentRole === 'mahasiswa') {
+          window.location.href = 'mahasiswa/index.html';
+        } else if (currentRole === 'pengelola') {
+          window.location.href = 'pengelola/index.html';
+        } else if (currentRole === 'admin') {
+          window.location.href = 'admin/index.html';
+        }
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Pemesanan - Panel Administrator</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navbar Utama -->
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="brand-logo">
+        <img src="../assets/img/logo-telkom.png" alt="Logo Telkom University">
+        <div class="brand-divider"></div>
+        <div class="brand-title">
+          <h1>RUANG DISKUSI</h1>
+          <span>Panel Administrator</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Manajemen User</a></li>
+        <li><a href="ruangan.html">CRUD Ruangan</a></li>
+        <li><a href="fasilitas.html">CRUD Fasilitas</a></li>
+        <li><a href="log.html" class="active">Log Pemesanan</a></li>
+        <li><a href="../index.html" class="btn btn-outline btn-sm">Keluar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-wrapper">
+    <div class="dashboard-grid">
+      
+      <!-- Sidebar Admin -->
+      <aside class="sidebar">
+        <div class="sidebar-profile">
+          <div class="profile-avatar" style="background-color: #fef2f2; color: var(--color-secondary);">AD</div>
+          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 2px;">Administrator</h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Super Admin Sistem</span>
+          <div style="margin-top: 8px;">
+            <span class="badge badge-danger">Full Access</span>
+          </div>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li>
+            <a href="index.html">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              Manajemen User
+            </a>
+          </li>
+          <li>
+            <a href="ruangan.html">
+              <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+              CRUD Ruangan
+            </a>
+          </li>
+          <li>
+            <a href="fasilitas.html">
+              <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.7 2.9 11.7c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+              CRUD Fasilitas
+            </a>
+          </li>
+          <li>
+            <a href="log.html" class="active">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+              Log Pemesanan
+            </a>
+          </li>
+          <li style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+            <a href="../index.html" style="color: var(--status-danger-text);">
+              <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+              Keluar
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="content-area">
+        
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Log & Rekapitulasi Pemesanan Seluruh Kampus</h3>
+          </div>
+          <div class="card-body" style="padding: 0;">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Kode Booking</th>
+                    <th>Peminjam (Mahasiswa)</th>
+                    <th>Ruangan</th>
+                    <th>Tanggal & Jam</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>BK-20261107-001</strong></td>
+                    <td>Faisa Abhinaya (103062430002)</td>
+                    <td>Ruang Diskusi Alpha 101</td>
+                    <td>09 Nov 2026 (09:00 - 11:00)</td>
+                    <td><span class="badge badge-success">Disetujui</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>BK-20261107-002</strong></td>
+                    <td>Ilham Fawwaz (103062400054)</td>
+                    <td>Ruang Diskusi Beta 202</td>
+                    <td>10 Nov 2026 (13:00 - 15:00)</td>
+                    <td><span class="badge badge-warning">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>BK-20261106-003</strong></td>
+                    <td>Ilham Kurniawan (103062400126)</td>
+                    <td>Ruang Diskusi Gamma 303</td>
+                    <td>08 Nov 2026 (10:00 - 12:00)</td>
+                    <td><span class="badge badge-danger">Ditolak</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

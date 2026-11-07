@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cari Ruangan - Pemesanan Ruang Diskusi</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navbar Utama -->
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="brand-logo">
+        <img src="../assets/img/logo-telkom.png" alt="Logo Telkom University">
+        <div class="brand-divider"></div>
+        <div class="brand-title">
+          <h1>RUANG DISKUSI</h1>
+          <span>Portal Mahasiswa</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="ruangan.html" class="active">Cari Ruangan</a></li>
+        <li><a href="pemesanan.html">Pemesanan Saya</a></li>
+        <li><a href="lapor.html">Lapor Fasilitas</a></li>
+        <li><a href="../index.html" class="btn btn-outline btn-sm">Keluar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-wrapper">
+    <div class="dashboard-grid">
+      
+      <!-- Sidebar Panel -->
+      <aside class="sidebar">
+        <div class="sidebar-profile">
+          <div class="profile-avatar">FA</div>
+          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 2px;">Faisa Abhinaya</h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">NIM: 103062430002</span>
+          <div style="margin-top: 8px;">
+            <span class="badge badge-info">Mahasiswa Aktif</span>
+          </div>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li>
+            <a href="index.html">
+              <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="ruangan.html" class="active">
+              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+              Cari Ruangan
+            </a>
+          </li>
+          <li>
+            <a href="pemesanan.html">
+              <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+              Pemesanan Saya
+            </a>
+          </li>
+          <li>
+            <a href="lapor.html">
+              <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.7 2.9 11.7c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+              Lapor Fasilitas
+            </a>
+          </li>
+          <li style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+            <a href="../index.html" style="color: var(--status-danger-text);">
+              <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+              Keluar
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="content-area">
+        
+        <!-- Filter Bar Card -->
+        <div class="card" style="border-top: 4px solid var(--color-secondary);">
+          <div class="card-body">
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--color-secondary);">
+              Filter & Cari Ruang Diskusi
+            </h3>
+            <div class="form-row">
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">Cari Nama Ruangan / Gedung</label>
+                <input type="text" id="searchInput" class="form-control" placeholder="Contoh: Alpha, Gedung TUA..." onkeyup="filterRooms()">
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">Kapasitas Minimum</label>
+                <select id="capacitySelect" class="form-select" onchange="filterRooms()">
+                  <option value="0">Semua Kapasitas</option>
+                  <option value="6">Minimal 6 Orang</option>
+                  <option value="8">Minimal 8 Orang</option>
+                  <option value="12">Minimal 12 Orang</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 0;">
+                <label class="form-label">Fasilitas Khusus</label>
+                <select id="facilitySelect" class="form-select" onchange="filterRooms()">
+                  <option value="">Semua Fasilitas</option>
+                  <option value="Proyektor">Memiliki Proyektor</option>
+                  <option value="Smart TV">Memiliki Smart TV</option>
+                  <option value="AC">Ber-AC</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 style="font-size: 1.4rem; color: var(--text-dark); font-weight: 800;">Daftar Ruang Diskusi Kampus</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.2rem;">Pilih ruangan untuk melihat detail fasilitas atau melakukan pengecekan ketersediaan.</p>
+          </div>
+          <span class="badge badge-info" id="roomCountBadge">Menampilkan 4 Ruangan</span>
+        </div>
+
+        <!-- Room Catalog Grid -->
+        <div class="room-grid" id="roomGrid">
+          <!-- Generated by JS -->
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal Booking Form -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalRoomTitle">Form Pemesanan Ruang Diskusi</h3>
+        <button class="modal-close" onclick="closeModal('bookingModal')">&times;</button>
+      </div>
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="modal-body">
+          <input type="hidden" id="modalRoomName">
+          
+          <div class="form-group">
+            <label class="form-label">Nama Pemesan (Mahasiswa)</label>
+            <input type="text" class="form-control" value="Faisa Abhinaya (103062430002)" readonly style="background-color: #f1f5f9;">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Tanggal Pemesanan</label>
+              <input type="date" id="bookingTanggal" class="form-control" required onchange="runAjaxCheck()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Jam Mulai</label>
+              <input type="time" id="bookingJamMulai" class="form-control" required value="09:00" onchange="runAjaxCheck()">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Jam Selesai</label>
+            <input type="time" id="bookingJamSelesai" class="form-control" required value="11:00" onchange="runAjaxCheck()">
+          </div>
+
+          <div id="ajaxCheckStatus" style="margin-bottom: 1.25rem;">
+            <div class="badge badge-info" style="width: 100%; padding: 10px; display: block;">Memasukkan tanggal dan jam akan mengecek ketersediaan via AJAX.</div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('bookingModal')">Batal</button>
+          <button type="submit" id="btnSubmitBooking" class="btn btn-primary">Kirim Permohonan Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderRooms(DATA_RUANGAN);
+      document.getElementById('bookingTanggal').value = new Date().toISOString().split('T')[0];
+    });
+
+    function renderRooms(rooms) {
+      const grid = document.getElementById('roomGrid');
+      grid.innerHTML = '';
+
+      if (rooms.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem; background: white; border-radius: 8px;">Tidak ada ruangan yang sesuai filter.</div>';
+        document.getElementById('roomCountBadge').innerText = '0 Ruangan Ditampilkan';
+        return;
+      }
+
+      document.getElementById('roomCountBadge').innerText = `Menampilkan ${rooms.length} Ruangan`;
+
+      rooms.forEach(room => {
+        const isAvailable = room.status === 'Tersedia';
+        const cardHtml = `
+          <div class="room-card">
+            <div class="room-img-placeholder">
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; color: var(--color-secondary); font-weight: 800; margin-bottom: 4px;">TEL-U</div>
+                <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;">RUANG DISKUSI</span>
+              </div>
+              <span class="room-capacity-tag">${room.kapasitas} Orang</span>
+            </div>
+            <div class="room-content">
+              <h3 class="room-title">${room.nama}</h3>
+              <div class="room-location">${room.gedung}</div>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">${room.deskripsi}</p>
+              
+              <div class="room-facilities">
+                ${room.fasilitas.map(f => `<span class="facility-tag">✓ ${f}</span>`).join('')}
+              </div>
+
+              <div class="room-footer">
+                <span class="badge ${isAvailable ? 'badge-success' : 'badge-danger'}">
+                  ${room.status}
+                </span>
+                <button class="btn btn-primary btn-sm" onclick="openBookingModal('${room.nama}')">
+                  Pesan Ruangan
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        grid.innerHTML += cardHtml;
+      });
+    }
+
+    function filterRooms() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const capacity = parseInt(document.getElementById('capacitySelect').value);
+      const facility = document.getElementById('facilitySelect').value;
+
+      const filtered = DATA_RUANGAN.filter(room => {
+        const matchSearch = room.nama.toLowerCase().includes(search) || room.gedung.toLowerCase().includes(search);
+        const matchCap = room.kapasitas >= capacity;
+        const matchFac = facility === '' || room.fasilitas.includes(facility);
+        return matchSearch && matchCap && matchFac;
+      });
+
+      renderRooms(filtered);
+    }
+
+    function openBookingModal(roomName) {
+      document.getElementById('modalRoomTitle').innerText = `Pesan ${roomName}`;
+      document.getElementById('modalRoomName').value = roomName;
+      openModal('bookingModal');
+      runAjaxCheck();
+    }
+
+    async function runAjaxCheck() {
+      const roomName = document.getElementById('modalRoomName').value;
+      const tgl = document.getElementById('bookingTanggal').value;
+      const jamM = document.getElementById('bookingJamMulai').value;
+      const jamS = document.getElementById('bookingJamSelesai').value;
+      const statusDiv = document.getElementById('ajaxCheckStatus');
+      const btnSubmit = document.getElementById('btnSubmitBooking');
+
+      if (!roomName || !tgl || !jamM || !jamS) return;
+
+      statusDiv.innerHTML = '<div class="badge badge-info" style="width: 100%; padding: 10px; display:block;">Memeriksa ketersediaan jadwal via AJAX...</div>';
+      btnSubmit.disabled = true;
+
+      const res = await checkAvailability(roomName, tgl, jamM, jamS);
+
+      if (res.available) {
+        statusDiv.innerHTML = `<div class="badge badge-success" style="width: 100%; padding: 10px; display:block;"><strong>${res.message}</strong></div>`;
+        btnSubmit.disabled = false;
+      } else {
+        statusDiv.innerHTML = `<div class="badge badge-danger" style="width: 100%; padding: 10px; display:block;"><strong>${res.message}</strong></div>`;
+        btnSubmit.disabled = true;
+      }
+    }
+
+    function submitBooking(e) {
+      e.preventDefault();
+      const roomName = document.getElementById('modalRoomName').value;
+      const tgl = document.getElementById('bookingTanggal').value;
+      const jamM = document.getElementById('bookingJamMulai').value;
+      const jamS = document.getElementById('bookingJamSelesai').value;
+
+      const newBooking = {
+        id: "BK-20261107-00" + (DATA_PEMESANAN.length + 1),
+        nim: "103062430002",
+        namaMahasiswa: "Faisa Abhinaya",
+        ruangan: roomName,
+        tanggal: tgl,
+        jamMulai: jamM,
+        jamSelesai: jamS,
+        status: "Pending",
+        tglPengajuan: new Date().toISOString().split('T')[0]
+      };
+
+      DATA_PEMESANAN.unshift(newBooking);
+      closeModal('bookingModal');
+      showNotification('Permohonan pemesanan berhasil dikirim! Menunggu persetujuan pengelola.', 'success');
+      
+      setTimeout(() => {
+        window.location.href = 'pemesanan.html';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

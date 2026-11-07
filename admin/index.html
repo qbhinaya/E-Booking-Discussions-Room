@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manajemen User - Panel Administrator</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navbar Utama -->
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <a href="../index.html" class="brand-logo">
+        <img src="../assets/img/logo-telkom.png" alt="Logo Telkom University">
+        <div class="brand-divider"></div>
+        <div class="brand-title">
+          <h1>RUANG DISKUSI</h1>
+          <span>Panel Administrator</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Manajemen User</a></li>
+        <li><a href="ruangan.html">CRUD Ruangan</a></li>
+        <li><a href="fasilitas.html">CRUD Fasilitas</a></li>
+        <li><a href="log.html">Log Pemesanan</a></li>
+        <li><a href="../index.html" class="btn btn-outline btn-sm">Keluar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-wrapper">
+    <div class="dashboard-grid">
+      
+      <!-- Sidebar Admin -->
+      <aside class="sidebar">
+        <div class="sidebar-profile">
+          <div class="profile-avatar" style="background-color: #fef2f2; color: var(--color-secondary);">AD</div>
+          <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 2px;">Administrator</h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Super Admin Sistem</span>
+          <div style="margin-top: 8px;">
+            <span class="badge badge-danger">Full Access</span>
+          </div>
+        </div>
+
+        <ul class="sidebar-menu">
+          <li>
+            <a href="index.html" class="active">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              Manajemen User
+            </a>
+          </li>
+          <li>
+            <a href="ruangan.html">
+              <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+              CRUD Ruangan
+            </a>
+          </li>
+          <li>
+            <a href="fasilitas.html">
+              <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.7 2.9 11.7c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+              CRUD Fasilitas
+            </a>
+          </li>
+          <li>
+            <a href="log.html">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+              Log Pemesanan
+            </a>
+          </li>
+          <li style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+            <a href="../index.html" style="color: var(--status-danger-text);">
+              <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+              Keluar
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="content-area">
+        
+        <!-- Stats Summary -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-title">Total User</div>
+            <div class="stat-value" id="totalUsers">8</div>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Semua role</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-title">Mahasiswa</div>
+            <div class="stat-value" style="color: #075985;" id="totalMahasiswa">6</div>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Akun aktif</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-title">Pengelola</div>
+            <div class="stat-value" style="color: #854d0e;" id="totalPengelola">1</div>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Staff pengelola</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-title">Administrator</div>
+            <div class="stat-value" style="color: var(--color-secondary);" id="totalAdmin">1</div>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Super admin</span>
+          </div>
+        </div>
+
+        <!-- User Table -->
+        <div class="card">
+          <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <h3 class="card-title">Daftar Akun Pengguna</h3>
+            <button class="btn btn-primary btn-sm" onclick="openAddUserModal()">+ Tambah User</button>
+          </div>
+          <div class="card-body" style="padding: 0;">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nama Lengkap</th>
+                    <th>Email</th>
+                    <th>Level Role</th>
+                    <th>Aksi Admin</th>
+                  </tr>
+                </thead>
+                <tbody id="userTableBody">
+                  <!-- Data populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal Tambah/Edit User -->
+  <div class="modal-backdrop" id="userModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Tambah User Baru</h3>
+        <button class="modal-close" onclick="closeUserModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="userForm">
+          <input type="hidden" id="userId">
+          
+
+
+          <div class="form-group">
+            <label class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="userName" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" id="userEmail" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Level Role</label>
+            <select class="form-select" id="userRole" required>
+              <option value="">Pilih Role</option>
+              <option value="Mahasiswa">Mahasiswa</option>
+              <option value="Pengelola">Pengelola</option>
+              <option value="Administrator">Administrator</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" id="userPassword" placeholder="Kosongkan jika tidak ingin mengubah">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" onclick="closeUserModal()">Batal</button>
+        <button class="btn btn-primary btn-sm" onclick="saveUser()">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Konfirmasi Hapus -->
+  <div class="modal-backdrop" id="deleteModal">
+    <div class="modal-card" style="max-width: 400px;">
+      <div class="modal-header" style="background-color: var(--status-danger-bg);">
+        <h3 style="color: var(--status-danger-text);">Konfirmasi Hapus</h3>
+        <button class="modal-close" onclick="closeDeleteModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Yakin ingin menghapus user "<strong id="deleteItemName"></strong>"?</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Data yang dihapus tidak dapat dikembalikan.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" onclick="closeDeleteModal()">Batal</button>
+        <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Mock data users
+    let users = [
+      { id: 1, name: 'Faisa Abhinaya', email: 'faisa@student.telkomuniversity.ac.id', role: 'Mahasiswa' },
+      { id: 2, name: 'Muhammad Rizky Maulana', email: 'rizky@student.telkomuniversity.ac.id', role: 'Mahasiswa' },
+      { id: 3, name: 'Ilham Fawwaz Hairasikh', email: 'ilham.f@student.telkomuniversity.ac.id', role: 'Mahasiswa' },
+      { id: 4, name: 'Luthfi Narendra Putra', email: 'luthfi@student.telkomuniversity.ac.id', role: 'Mahasiswa' },
+      { id: 5, name: 'Ilham Kurniawan', email: 'ilham.k@student.telkomuniversity.ac.id', role: 'Mahasiswa' },
+      { id: 6, name: 'Mateus Ledo', email: 'mateus@student.telkomuniversity.ac.id', role: 'Mahasiswa' },
+      { id: 7, name: 'Staff Pengelola', email: 'pengelola@telkomuniversity.ac.id', role: 'Pengelola' },
+      { id: 8, name: 'Administrator', email: 'admin@telkomuniversity.ac.id', role: 'Administrator' }
+    ];
+
+    let editingId = null;
+    let deletingId = null;
+
+    function updateStats() {
+      document.getElementById('totalUsers').textContent = users.length;
+      document.getElementById('totalMahasiswa').textContent = users.filter(u => u.role === 'Mahasiswa').length;
+      document.getElementById('totalPengelola').textContent = users.filter(u => u.role === 'Pengelola').length;
+      document.getElementById('totalAdmin').textContent = users.filter(u => u.role === 'Administrator').length;
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('userTableBody');
+      const roleColors = {
+        'Mahasiswa': 'badge-info',
+        'Pengelola': 'badge-warning',
+        'Administrator': 'badge-danger'
+      };
+
+      tbody.innerHTML = users.map(u => `
+        <tr>
+          <td><strong>${u.id}</strong></td>
+          <td>${u.name}</td>
+          <td>${u.email}</td>
+          <td><span class="badge ${roleColors[u.role]}">${u.role}</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm" onclick="editUser(${u.id})">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteUser(${u.id})">Hapus</button>
+          </td>
+        </tr>
+      `).join('');
+
+      updateStats();
+    }
+
+    function openAddUserModal() {
+      editingId = null;
+      document.getElementById('modalTitle').textContent = 'Tambah User Baru';
+      document.getElementById('userForm').reset();
+      document.getElementById('userPassword').placeholder = 'Masukkan password';
+      document.getElementById('userModal').classList.add('show');
+    }
+
+    function editUser(id) {
+      const user = users.find(u => u.id === id);
+      if (!user) return;
+
+      editingId = id;
+      document.getElementById('modalTitle').textContent = 'Edit User';
+      document.getElementById('userName').value = user.name;
+      document.getElementById('userEmail').value = user.email;
+      document.getElementById('userRole').value = user.role;
+      document.getElementById('userPassword').value = '';
+      document.getElementById('userPassword').placeholder = 'Kosongkan jika tidak ingin mengubah';
+      document.getElementById('userModal').classList.add('show');
+    }
+
+    function saveUser() {
+      const name = document.getElementById('userName').value.trim();
+      const email = document.getElementById('userEmail').value.trim();
+      const role = document.getElementById('userRole').value;
+
+      if (!name || !email || !role) {
+        showToast('Mohon lengkapi semua field', 'warning');
+        return;
+      }
+
+      if (editingId) {
+        const user = users.find(u => u.id === editingId);
+        user.name = name;
+        user.email = email;
+        user.role = role;
+        showToast('User berhasil diupdate', 'success');
+      } else {
+        const newId = Math.max(...users.map(u => u.id)) + 1;
+        users.push({ id: newId, name, email, role });
+        showToast('User baru berhasil ditambahkan', 'success');
+      }
+
+      closeUserModal();
+      renderTable();
+    }
+
+    function deleteUser(id) {
+      const user = users.find(u => u.id === id);
+      if (!user) return;
+
+      deletingId = id;
+      document.getElementById('deleteItemName').textContent = user.name;
+      document.getElementById('deleteModal').classList.add('show');
+    }
+
+    function confirmDelete() {
+      users = users.filter(u => u.id !== deletingId);
+      showToast('User berhasil dihapus', 'success');
+      closeDeleteModal();
+      renderTable();
+    }
+
+    function closeUserModal() {
+      document.getElementById('userModal').classList.remove('show');
+    }
+
+    function closeDeleteModal() {
+      document.getElementById('deleteModal').classList.remove('show');
+    }
+
+    // Initial render
+    renderTable();
+  </script>
+</body>
+</html>

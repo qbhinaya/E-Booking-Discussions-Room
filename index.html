@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Pemesanan Ruang Diskusi Mahasiswa - Telkom University</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navbar Utama -->
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/img/logo-telkom.png" alt="Logo Telkom University">
+        <div class="brand-divider"></div>
+        <div class="brand-title">
+          <h1>RUANG DISKUSI</h1>
+          <span>Telkom University Jakarta</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Beranda</a></li>
+        <li><a href="#fitur">Fitur</a></li>
+        <li><a href="#alur">Alur</a></li>
+        <li><a href="login.html" class="btn btn-primary btn-sm">Masuk</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section style="background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%); padding: 5rem 1.5rem; position: relative; overflow: hidden; border-bottom: 1px solid var(--border-color);">
+    <!-- Decorative background -->
+    <div style="position: absolute; top: -100px; right: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(153, 0, 0, 0.05) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        
+        <!-- Hero Text -->
+        <div>
+          <div style="display: inline-block; background: rgba(153, 0, 0, 0.08); color: var(--color-secondary); font-size: 0.85rem; font-weight: 700; padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; letter-spacing: 0.5px;">
+            SISTEM TERINTEGRASI TELKOM UNIVERSITY
+          </div>
+
+          <h1 style="font-size: clamp(2rem, 4vw, 3rem); color: var(--text-dark); margin-bottom: 1.25rem; line-height: 1.2; font-weight: 800;">
+            Pemesanan Ruang Diskusi <span style="color: var(--color-secondary); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px;">Mudah & Transparan</span>
+          </h1>
+
+          <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; max-width: 550px;">
+            Portal booking ruang diskusi mahasiswa dengan pengecekan ketersediaan real-time via AJAX. Didesain khusus untuk memenuhi kebutuhan akademik Telkom University Jakarta.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
+            <div style="text-align: center;">
+              <div style="font-size: 2.2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: 0.5rem;">12</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 500; line-height: 1.5;">Ruang<br/>Tersedia</div>
+            </div>
+            <div style="text-align: center; border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color);">
+              <div style="font-size: 2.2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: 0.5rem;">500+</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 500; line-height: 1.5;">Pengguna<br/>Aktif</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2.2rem; font-weight: 800; color: var(--color-secondary); margin-bottom: 0.5rem;">24/7</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 500; line-height: 1.5;">Akses<br/>Online</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="login.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 12px rgba(153, 0, 0, 0.2);">
+              Login untuk Mulai →
+            </a>
+            <a href="daftar.html" class="btn btn-outline" style="padding: 0.9rem 2rem; font-size: 1rem; font-weight: 600;">
+              Daftar Akun
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Form Card -->
+        <div class="card" style="box-shadow: 0 12px 32px rgba(0,0,0,0.12); border-top: 5px solid var(--color-secondary); border-radius: 16px; overflow: hidden; background: white;">
+          <div style="background: linear-gradient(135deg, var(--color-secondary) 0%, #b91c1c 100%); color: white; padding: 2rem; text-align: center;">
+            <svg style="width:32px;height:32px;fill:currentColor;margin:0 auto 0.75rem;" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin: 0; color: white;">Cek Ketersediaan</h3>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0; opacity: 0.95;">Pengecekan real-time AJAX</p>
+          </div>
+
+          <div style="padding: 2.5rem;">
+            <form id="quickCheckForm" onsubmit="event.preventDefault(); handleQuickCheck();">
+              <div class="form-group">
+                <label class="form-label" style="font-weight: 600;">Pilih Ruangan</label>
+                <select class="form-select" id="checkRuangan" required>
+                  <option value="">-- Pilih Ruangan --</option>
+                  <option value="Ruang Diskusi Alpha 101">Alpha 101 (8 orang)</option>
+                  <option value="Ruang Diskusi Beta 202">Beta 202 (12 orang)</option>
+                  <option value="Ruang Diskusi Gamma 303">Gamma 303 (6 orang)</option>
+                  <option value="Ruang Diskusi Delta 404">Delta 404 (15 orang)</option>
+                </select>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" style="font-weight: 600;">Tanggal</label>
+                  <input type="date" class="form-control" id="checkTanggal" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" style="font-weight: 600;">Jam Mulai</label>
+                  <input type="time" class="form-control" id="checkJamMulai" required value="09:00">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 12px rgba(153, 0, 0, 0.2);">
+                Cek Sekarang
+              </button>
+            </form>
+            <div id="quickCheckResult" style="margin-top: 1.5rem; display: none;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="fitur" style="padding: 6rem 1.5rem; background: #ffffff;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Section Header -->
+      <div style="text-align: center; margin-bottom: 4.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <div style="display: inline-block; background: rgba(153, 0, 0, 0.08); color: var(--color-secondary); font-size: 0.85rem; font-weight: 700; padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 1.5rem; letter-spacing: 0.5px;">
+          KEUNGGULAN SISTEM
+        </div>
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--text-dark); margin-bottom: 1rem; line-height: 1.2; font-weight: 800;">
+          Fitur Yang Membuat <span style="color: var(--color-secondary);">Berbeda</span>
+        </h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin: 0;">
+          Sistem booking ruang diskusi dengan teknologi terkini yang dirancang khusus untuk mahasiswa Telkom University Jakarta.
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+
+        <!-- Feature 1 -->
+        <div style="padding: 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #fffafa 100%); border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: all 0.3s ease; display: flex; flex-direction: column;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-secondary) 0%, #b91c1c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 1.5rem; flex-shrink: 0;">
+            <svg style="width:28px;height:28px;fill:currentColor;" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          </div>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 0 0 0.75rem 0; color: var(--text-dark);">Pengecekan Real-Time</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin: 0; flex-grow: 1;">
+            Teknologi AJAX memastikan tidak ada jadwal bentrok. Sistem otomatis mengecek ketersediaan sebelum pemesanan dikirim.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div style="padding: 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #fffafa 100%); border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: all 0.3s ease; display: flex; flex-direction: column;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-secondary) 0%, #b91c1c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 1.5rem; flex-shrink: 0;">
+            <svg style="width:28px;height:28px;fill:currentColor;" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 0 0 0.75rem 0; color: var(--text-dark);">Multi-Role Access</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin: 0; flex-grow: 1;">
+            Hak akses terstruktur untuk Mahasiswa, Pengelola Ruangan, dan Administrator dengan fitur panel lengkap masing-masing.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div style="padding: 2.5rem; background: linear-gradient(135deg, #ffffff 0%, #fffafa 100%); border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: all 0.3s ease; display: flex; flex-direction: column;">
+          <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-secondary) 0%, #b91c1c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 1.5rem; flex-shrink: 0;">
+            <svg style="width:28px;height:28px;fill:currentColor;" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          </div>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 0 0 0.75rem 0; color: var(--text-dark);">Transparansi & Laporan</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin: 0; flex-grow: 1;">
+            Status pemesanan jelas dengan log aktivitas lengkap. Mahasiswa dapat melaporkan kendala fasilitas secara online.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="alur" style="padding: 6rem 1.5rem; background: #ffffff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      
+      <!-- Section Header -->
+      <div style="text-align: center; margin-bottom: 4.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--text-dark); margin-bottom: 1rem; line-height: 1.2; font-weight: 800;">
+          Cara <span style="color: var(--color-secondary);">Memesan Ruangan</span>
+        </h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin: 0;">
+          Proses pemesanan yang mudah, terstruktur, dan transparan hanya dalam 4 langkah sederhana.
+        </p>
+      </div>
+
+      <!-- Process Steps -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem;">
+
+        <!-- Step 1 -->
+        <div style="padding: 2.5rem 2rem; background: linear-gradient(180deg, #ffffff 0%, #fffafa 100%); border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+          <div style="width: 56px; height: 56px; background: var(--color-secondary); color: white; font-weight: 800; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(153, 0, 0, 0.2);">
+            1
+          </div>
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin: 0 0 0.75rem 0; color: var(--text-dark);">Login atau Registrasi</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin: 0;">
+            Masuk menggunakan akun mahasiswa yang sudah terdaftar atau buat akun baru melalui halaman registrasi.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="padding: 2.5rem 2rem; background: linear-gradient(180deg, #ffffff 0%, #fffafa 100%); border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+          <div style="width: 56px; height: 56px; background: var(--color-secondary); color: white; font-weight: 800; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(153, 0, 0, 0.2);">
+            2
+          </div>
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin: 0 0 0.75rem 0; color: var(--text-dark);">Pilih Ruangan & Jadwal</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin: 0;">
+            Lihat katalog ruangan, periksa ketersediaan real-time, dan pilih jadwal diskusi yang sesuai kebutuhan kelompok.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="padding: 2.5rem 2rem; background: linear-gradient(180deg, #ffffff 0%, #fffafa 100%); border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+          <div style="width: 56px; height: 56px; background: var(--color-secondary); color: white; font-weight: 800; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(153, 0, 0, 0.2);">
+            3
+          </div>
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin: 0 0 0.75rem 0; color: var(--text-dark);">Isi Form & Kirim</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin: 0;">
+            Lengkapi detail pemesanan seperti tujuan diskusi, jumlah peserta, dan topik yang akan dibahas.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div style="padding: 2.5rem 2rem; background: linear-gradient(180deg, #ffffff 0%, #fffafa 100%); border: 1px solid var(--border-color); border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+          <div style="width: 56px; height: 56px; background: var(--color-secondary); color: white; font-weight: 800; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(153, 0, 0, 0.2);">
+            4
+          </div>
+          <h3 style="font-size: 1.1rem; font-weight: 800; margin: 0 0 0.75rem 0; color: var(--text-dark);">Verifikasi & Gunakan</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin: 0;">
+            Pengelola memverifikasi pemesanan Anda dan ruangan siap digunakan sesuai jadwal yang telah disetujui.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="padding: 5rem 1.5rem; background: linear-gradient(135deg, var(--color-secondary) 0%, #b91c1c 100%); position: relative; overflow: hidden;">
+    <!-- Decorative background -->
+    <div style="position: absolute; top: -100px; left: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+      <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem); color: white; margin-bottom: 1rem; line-height: 1.2; font-weight: 800;">
+        Siap Memesan Ruang Diskusi?
+      </h2>
+      <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.1rem; line-height: 1.8; margin: 0 0 2.5rem 0; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Mulai cari dan pesan ruangan favorit Anda sekarang. Proses yang mudah, cepat, dan transparan menanti Anda.
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <a href="login.html" class="btn" style="background: white; color: var(--color-secondary); padding: 0.9rem 2rem; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: inline-block;">
+          Login Sekarang
+        </a>
+        <a href="daftar.html" class="btn" style="background: transparent; color: white; border: 2px solid white; padding: 0.9rem 2rem; font-size: 1rem; font-weight: 600; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; display: inline-block;">
+          Daftar Akun
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main JavaScript -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Set today's date
+    document.getElementById('checkTanggal').value = new Date().toISOString().split('T')[0];
+
+    async function handleQuickCheck() {
+      const ruangan = document.getElementById('checkRuangan').value;
+      const tanggal = document.getElementById('checkTanggal').value;
+      const jamMulai = document.getElementById('checkJamMulai').value;
+      const resultDiv = document.getElementById('quickCheckResult');
+
+      if (!ruangan || !tanggal || !jamMulai) return;
+
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = '<div style="text-align: center; color: var(--text-muted);">Mengecek ketersediaan...</div>';
+
+      // Simulasi delay AJAX
+      await new Promise(r => setTimeout(r, 800));
+
+      // Simulasi cek ketersediaan
+      const isAvailable = Math.random() > 0.3;
+      
+      if (isAvailable) {
+        resultDiv.innerHTML = `
+          <div style="padding: 1.25rem; background: #dcfce7; border: 1px solid #86efac; border-radius: 8px;">
+            <div style="color: #15803d; font-weight: 600; margin-bottom: 0.5rem;">✓ Ruangan Tersedia</div>
+            <p style="color: #166534; font-size: 0.9rem; margin: 0; line-height: 1.6;">
+              ${ruangan} tersedia pada ${tanggal} pukul ${jamMulai}. Silakan lanjutkan ke form pemesanan lengkap.
+            </p>
+          </div>
+        `;
+      } else {
+        resultDiv.innerHTML = `
+          <div style="padding: 1.25rem; background: #fee2e2; border: 1px solid #fca5a5; border-radius: 8px;">
+            <div style="color: #991b1b; font-weight: 600; margin-bottom: 0.5rem;">✗ Ruangan Tidak Tersedia</div>
+            <p style="color: #7f1d1d; font-size: 0.9rem; margin: 0; line-height: 1.6;">
+              Maaf, ${ruangan} telah dipesan pada waktu tersebut. Silakan pilih jadwal atau ruangan lain.
+            </p>
+          </div>
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
